@@ -18,6 +18,13 @@ bool isPalindrome(string str)
     reverse(str.begin(), str.end());
     return temp == str;
 }
+
+bool isPalindrome(int num)
+{
+    string str = to_string(num);
+    return isPalindrome(str);
+}
+
 int main()
 {
     string str;
@@ -25,11 +32,24 @@ int main()
     getline(cin, str);
     if (isPalindrome(str))
     {
-        cout << str << " is a palindrome string";
+        cout << str << " is a palindrome string" << endl;
     }
     else
     {
-        cout << str << " is not a palindrome string";
+        cout << str << " is not a palindrome string" << endl;
     }
+
+    int num;
+    cout << "Enter a number: ";
+    cin >> num;
+    if (isPalindrome(num))
+    {
+        cout << num << " is a palindrome number" << endl;
+    }
+    else
+    {
+        cout << num << " is not a palindrome number" << endl;
+    }
+
     return 0;
 }
